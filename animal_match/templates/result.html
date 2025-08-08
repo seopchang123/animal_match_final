@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>매칭 결과</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        {% if match %}
+            <h2>{{ user.name }} ❤️ {{ match.name }}</h2>
+            <div class="match-info">
+                <p><strong>내 동물형:</strong> {{ user.animal }}</p>
+                <p><strong>내 자기소개:</strong> {{ user.intro }}</p>
+                <hr>
+                <p><strong>상대 이름:</strong> {{ match.name }}</p>
+                <p><strong>성별:</strong> {{ match.gender }}</p>
+                <p><strong>학년:</strong> {{ match.grade }}</p>
+                <p><strong>상대 동물형:</strong> {{ match.animal }}</p>
+                <p><strong>상대 자기소개:</strong> {{ match.intro }}</p>
+            </div>
+        {% else %}
+            <h2>아쉽지만 아직 매칭 상대가 없어요 😢</h2>
+        {% endif %}
+        <a href="/" class="home-button">다시하기</a>
+    </div>
+</body>
+</html>

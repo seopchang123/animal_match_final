@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>동물 친구 매칭</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+        .container {
+            max-width: 500px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-top: 80px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            text-align: left;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        textarea {
+            resize: none;
+        }
+        button {
+            margin-top: 25px;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐾 나의 동물 친구는 누구일까?</h1>
+        <form action="/submit" method="post">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="gender">성별</label>
+            <select id="gender" name="gender" required>
+                <option value="남">남</option>
+                <option value="여">여</option>
+            </select>
+
+            <label for="grade">학년</label>
+            <select id="grade" name="grade" required>
+                <option value="고1">고1</option>
+                <option value="고2">고2</option>
+                <option value="고3">고3</option>
+            </select>
+
+            <label for="animal">당신의 동물형</label>
+            <select id="animal" name="animal" required>
+                <option value="강아지상">강아지상</option>
+                <option value="고양이상">고양이상</option>
+                <option value="하마상">하마상</option>
+                <option value="여우상">여우상</option>
+            </select>
+
+            <label for="intro">자기소개</label>
+            <textarea id="intro" name="intro" rows="4" placeholder="성격, 취미 등 자유롭게 입력해주세요 :)" required></textarea>
+
+            <button type="submit">매칭 시작하기 💘</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

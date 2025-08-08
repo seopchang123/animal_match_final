@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자 페이지</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👑 관리자 페이지</h1>
+
+        <h2>전체 사용자</h2>
+        <table>
+            <tr><th>ID</th><th>이름</th><th>성별</th><th>학년</th><th>동물형</th><th>자기소개</th><th>매칭됨</th></tr>
+            {% for u in users %}
+            <tr>
+                <td>{{ u[0] }}</td><td>{{ u[1] }}</td><td>{{ u[2] }}</td><td>{{ u[3] }}</td>
+                <td>{{ u[4] }}</td><td>{{ u[5] }}</td><td>{{ 'O' if u[6] else 'X' }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>매칭 기록</h2>
+        <table>
+            <tr><th>ID</th><th>user1</th><th>user2</th><th>동물형</th></tr>
+            {% for m in matches %}
+            <tr>
+                <td>{{ m[0] }}</td><td>{{ m[1] }}</td><td>{{ m[2] }}</td><td>{{ m[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <form action="/reset" method="POST" style="margin-top: 20px;">
+            <button type="submit" style="background:red; color:white;">⚠ 데이터 리셋</button>
+        </form>
+    </div>
+</body>
+</html>
